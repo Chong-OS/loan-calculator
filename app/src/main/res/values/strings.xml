@@ -1,3 +1,20 @@
 <resources>
   <string name="app_name">Loan Calculator</string>
+
+  <string name="text_name">Name</string>
+  <string name="text_property_price">Property Price</string>
+  <string name="text_loan_tenor">Loan Tenor</string>
+  <string name="text_interest_rate">Interest Rate</string>
+  <string name="text_year">years</string>
+  <string name="text_year_short">yrs</string>
+  <string name="text_adjust_rate_mortgage">Adjustable Rate Mortgage</string>
+
+  <string name="text_fmt_account_detail">Amount ฿%1$s, %2$s year</string>
+  <string name="text_fmt_tier">Tier %1$s</string>
+
+  <string name="button_add">Add</string>
+  <string name="button_cancel">Cancel</string>
+  <string name="button_switch_to_single">Switch to Single Rate</string>
+  <string name="button_switch_to_mortgage">Switch to Adjustable Rate Mortgage</string>
+  <string name="button_create">Create</string>
 </resources>

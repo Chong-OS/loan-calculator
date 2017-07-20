@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".account.create.CreateAccountActivity"
+  >
+
+  <android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    >
+
+    <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="?attr/colorPrimary"
+      app:popupTheme="@style/AppTheme.PopupOverlay"
+      />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <!-- Name -->
+      <EditText
+        android:id="@+id/inputName"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="72dp"
+        android:paddingEnd="32dp"
+        android:hint="Bank 1"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+      <TextView
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_name"
+        app:layout_constraintBottom_toBottomOf="@+id/inputName"
+        app:layout_constraintStart_toStartOf="@+id/inputName"
+        app:layout_constraintTop_toTopOf="@+id/inputName"
+        />
+
+
+      <!-- Amount -->
+      <EditText
+        android:id="@+id/inputAmount"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="72dp"
+        android:paddingEnd="32dp"
+        android:ems="10"
+        android:hint="3,000,000"
+        android:imeOptions="actionNext"
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputName"
+        />
+      <TextView
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_property_price"
+        app:layout_constraintBottom_toBottomOf="@+id/inputAmount"
+        app:layout_constraintStart_toStartOf="@+id/inputAmount"
+        app:layout_constraintTop_toTopOf="@+id/inputAmount"
+        />
+      <TextView
+        style="@style/TextHolderStyle"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:text="฿"
+        app:layout_constraintBottom_toBottomOf="@+id/inputAmount"
+        app:layout_constraintEnd_toEndOf="@+id/inputAmount"
+        app:layout_constraintTop_toTopOf="@+id/inputAmount"
+        />
+
+
+      <!-- Time -->
+      <EditText
+        android:id="@+id/inputTime"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="72dp"
+        android:paddingEnd="32dp"
+        android:ems="10"
+        android:hint="30"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAmount"
+        />
+      <TextView
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_loan_tenor"
+        app:layout_constraintBottom_toBottomOf="@+id/inputTime"
+        app:layout_constraintStart_toStartOf="@+id/inputTime"
+        app:layout_constraintTop_toTopOf="@+id/inputTime"
+        />
+      <TextView
+        style="@style/TextHolderStyle"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_year_short"
+        app:layout_constraintBottom_toBottomOf="@+id/inputTime"
+        app:layout_constraintEnd_toEndOf="@+id/inputTime"
+        app:layout_constraintTop_toTopOf="@+id/inputTime"
+        />
+
+
+      <android.support.v7.widget.AppCompatButton
+        android:id="@+id/buttonSwitchRate"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_goneMarginTop="16dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/abc_button_round_background"
+        android:backgroundTint="@color/teal"
+        android:minHeight="48dp"
+        android:text="@string/button_switch_to_mortgage"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/inputRate"
+        />
+
+      <!-- Mortgage Rate -->
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:paddingTop="48dp"
+        android:paddingBottom="32dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonSwitchRate"
+        android:background="@drawable/abc_input_background"
+        android:visibility="gone"
+        />
+      <LinearLayout
+        android:id="@+id/recyclerViewRateHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_adjust_rate_mortgage"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewRate"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewRate"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewRate"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+          style="@style/TextHolderStyle"
+          android:layout_width="wrap_content"
+          android:layout_height="48dp"
+          android:text="@string/text_adjust_rate_mortgage"
+          android:gravity="center_vertical"
+          android:layout_marginStart="8dp"
+          />
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/dividerColor"
+          />
+      </LinearLayout>
+      <ImageButton
+        android:id="@+id/buttonAddRate"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_add"
+        android:tint="@color/textColorSecondary"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewRate"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewRate"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewRate"
+        android:visibility="gone"
+        />
+
+      <!-- Single Rate -->
+      <EditText
+        android:id="@+id/inputRate"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="72dp"
+        android:paddingEnd="32dp"
+        android:ems="10"
+        android:hint="6.5"
+        android:imeOptions="actionDone"
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTime"
+        />
+      <TextView
+        android:id="@+id/inputRateHint"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_interest_rate"
+        app:layout_constraintBottom_toBottomOf="@+id/inputRate"
+        app:layout_constraintStart_toStartOf="@+id/inputRate"
+        app:layout_constraintTop_toTopOf="@+id/inputRate"
+        />
+      <TextView
+        android:id="@+id/inputRateUnit"
+        style="@style/TextHolderStyle"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:text="%"
+        app:layout_constraintBottom_toBottomOf="@+id/inputRate"
+        app:layout_constraintEnd_toEndOf="@+id/inputRate"
+        app:layout_constraintTop_toTopOf="@+id/inputRate"
+        />
+
+
+      <!-- Button Create -->
+      <android.support.v7.widget.AppCompatButton
+        android:id="@+id/buttonCreate"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_goneMarginTop="80dp"
+        android:backgroundTint="@color/colorAccent"
+        android:enabled="false"
+        android:text="@string/button_create"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewRate"
+        />
+
+    </android.support.constraint.ConstraintLayout>
+
+  </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

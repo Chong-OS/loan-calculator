@@ -23,11 +23,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        foregroundDisposables.dispose()
+        foregroundDisposables.clear()
     }
 
     override fun onDestroy() {
-        activityDisposables.dispose()
+        activityDisposables.clear()
         super.onDestroy()
     }
 }

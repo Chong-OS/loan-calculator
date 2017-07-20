@@ -25,7 +25,7 @@ public interface AccountDao {
   @Delete
   int delete(Account account);
 
-  @Query("SELECT * from account")
+  @Query("SELECT * from account ORDER BY id DESC")
   Flowable<List<Account>> loadAll();
 
   @Query("SELECT * from account where id = :id LIMIT 1")

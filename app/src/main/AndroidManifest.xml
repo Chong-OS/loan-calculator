@@ -24,7 +24,10 @@
     </activity>
 
     <activity
-      android:name=".main.MainActivity"/>
+      android:name=".account.list.AccountListActivity"/>
+    <activity
+      android:name=".account.create.CreateAccountActivity"
+      android:windowSoftInputMode="stateHidden"/>
 
     <meta-data
       android:name="io.fabric.ApiKey"

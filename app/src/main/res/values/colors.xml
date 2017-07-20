@@ -3,12 +3,13 @@
   <color name="colorPrimary">#ffffff</color>
   <color name="colorPrimaryDark">#f8f9fb</color>
   <color name="colorStatusBar">#9e9e9e</color>
-  <color name="colorAccent">@color/orange</color>
+  <color name="colorAccent">@color/purple</color>
   <color name="colorWindowBackground">#eeeef4</color>
 
   <color name="textColorPrimary">#040404</color>
   <color name="textColorSecondary">#b0b0b0</color>
   <color name="shadowColor">#e4e4ea</color>
+  <color name="dividerColor">#d7d7d7</color>
 
   <color name="white">#ffffff</color>
   <color name="orange">#fe5943</color>

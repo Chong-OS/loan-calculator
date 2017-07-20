@@ -29,4 +29,27 @@
   <style name="AppTheme.PopupOverlay"
     parent="ThemeOverlay.AppCompat.Light"/>
 
+  <style name="TextHolderStyle">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/textColorPrimary</item>
+  </style>
+
+  <style name="EditTextStyle"
+    parent="Widget.AppCompat.EditText">
+    <item name="android:minHeight">48dp</item>
+    <item name="android:background">@drawable/abc_input_background</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@color/textColorPrimary</item>
+    <item name="android:textColorHint">@color/textColorSecondary</item>
+  </style>
+
+  <style name="ButtonStyle"
+    parent="@style/Widget.AppCompat.Button">
+    <item name="android:minHeight">48dp</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:background">@drawable/abc_button_round_background</item>
+    <item name="android:textAlignment">center</item>
+  </style>
+
 </resources>

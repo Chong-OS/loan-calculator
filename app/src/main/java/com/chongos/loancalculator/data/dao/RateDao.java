@@ -25,6 +25,6 @@ public interface RateDao {
   @Delete
   int delete(Rate rate);
 
-  @Query("SELECT * from rate where account_id = :id ORDER BY startYear ASC")
+  @Query("SELECT * from rate where account_id = :id ORDER BY _order ASC")
   Flowable<List<Rate>> loadAll(long id);
 }

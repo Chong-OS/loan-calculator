@@ -1,7 +1,7 @@
 package com.chongos.loancalculator.splash
 
 import com.chongos.loancalculator.base.BaseActivity
-import com.chongos.loancalculator.main.MainActivity
+import com.chongos.loancalculator.account.list.AccountListActivity
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -18,7 +18,7 @@ class SplashActivity : BaseActivity() {
         disposable.add(Single.timer(100, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { _, _ ->
-                    startActivity(MainActivity.getCallingIntent(this))
+                    startActivity(AccountListActivity.getCallingIntent(this))
                     finish()
                 })
     }

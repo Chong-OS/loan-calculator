@@ -25,8 +25,8 @@ public class Rate {
   public long id;
   @ColumnInfo(name = "account_id")
   public long accountId;
-
   public double rate;
-  public int startYear;
-  public int yearTime;
+  @ColumnInfo(name = "_order")
+  public int order;
+  public int months;
 }

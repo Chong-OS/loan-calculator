@@ -33,11 +33,11 @@ abstract class BaseFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
-        foregroundDisposables.dispose()
+        foregroundDisposables.clear()
     }
 
     override fun onDestroyView() {
-        fragmentDisposables.dispose()
+        fragmentDisposables.clear()
         super.onDestroyView()
     }
 
