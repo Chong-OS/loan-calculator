@@ -19,6 +19,9 @@ public interface RateDao {
   @Insert
   long insert(Rate rate);
 
+  @Insert
+  void inserts(List<Rate> rates);
+
   @Update
   int update(Rate rate);
 

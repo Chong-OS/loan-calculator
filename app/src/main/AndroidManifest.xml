@@ -24,10 +24,18 @@
     </activity>
 
     <activity
-      android:name=".account.list.AccountListActivity"/>
+      android:name=".account.list.AccountListActivity"
+      android:screenOrientation="portrait"
+      />
     <activity
       android:name=".account.create.CreateAccountActivity"
+      android:screenOrientation="portrait"
       android:windowSoftInputMode="stateHidden"/>
+
+    <activity
+      android:name=".calculate.CalculateActivity"
+      android:screenOrientation="portrait"
+      />
 
     <meta-data
       android:name="io.fabric.ApiKey"

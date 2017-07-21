@@ -8,6 +8,8 @@ import com.chongos.loancalculator.App
 import com.chongos.loancalculator.R
 import com.chongos.loancalculator.account.create.CreateAccountActivity
 import com.chongos.loancalculator.base.BaseActivity
+import com.chongos.loancalculator.calculate.CalculateActivity
+import com.chongos.loancalculator.data.entity.Account
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -39,6 +41,11 @@ class AccountListActivity : BaseActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
+        adapter.onItemSelectListener = object : AccountListAdapter.OnItemSelectListener {
+            override fun onSelect(account: Account) {
+                startActivity(CalculateActivity.getCallingIntent(this@AccountListActivity, account))
+            }
+        }
     }
 
     override fun onStartSubscribe(disposable: CompositeDisposable) {

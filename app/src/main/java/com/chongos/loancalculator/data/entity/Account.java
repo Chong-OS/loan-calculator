@@ -15,5 +15,5 @@ public class Account {
   public String name;
   public double amount;
   public int years;
-
+  public double interest;
 }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".account.create.CreateAccountActivity"
+  >
+
+  <android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    >
+
+    <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="?attr/colorPrimary"
+      app:popupTheme="@style/AppTheme.PopupOverlay"
+      />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+
+      <!--<View-->
+      <!--android:layout_width="0dp"-->
+      <!--android:layout_height="1dp"-->
+      <!--app:layout_constraintStart_toStartOf="parent"-->
+      <!--app:layout_constraintEnd_toEndOf="parent"/>-->
+
+      <!-- Loan amount -->
+      <TextView
+        android:id="@+id/textAmountHint"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/text_loan_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+      <TextView
+        android:id="@+id/textAmount"
+        style="@style/TextHolderStyle"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="textEnd"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textAmountHint"
+        app:layout_constraintEnd_toStartOf="@+id/textAmountUnit"
+        app:layout_constraintStart_toEndOf="@+id/textAmountHint"
+        tools:text="21,312"
+        />
+
+      <TextView
+        android:id="@+id/textAmountUnit"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="฿"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textAmountHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textAmount"
+        />
+
+
+      <!-- Loan Interest -->
+      <TextView
+        android:id="@+id/textInterestHint"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/text_loan_interest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAmountHint"
+        />
+
+      <TextView
+        android:id="@+id/textInterest"
+        style="@style/TextHolderStyle"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="textEnd"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textInterestHint"
+        app:layout_constraintEnd_toStartOf="@+id/textInterestUnit"
+        app:layout_constraintStart_toEndOf="@+id/textInterestHint"
+        tools:text="21,312"
+        />
+
+      <TextView
+        android:id="@+id/textInterestUnit"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="฿"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textInterestHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textInterest"
+        />
+
+      <!-- Loan Total -->
+      <TextView
+        android:id="@+id/textTotalHint"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/text_total_cost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInterestHint"
+        />
+
+      <TextView
+        android:id="@+id/textTotal"
+        style="@style/TextHolderStyle"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="textEnd"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textTotalHint"
+        app:layout_constraintEnd_toStartOf="@+id/textTotalUnit"
+        app:layout_constraintStart_toEndOf="@+id/textTotalHint"
+        tools:text="21,312"
+        />
+
+      <TextView
+        android:id="@+id/textTotalUnit"
+        style="@style/TextHolderStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="฿"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textTotalHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textTotal"
+        />
+
+      <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/seekBarTenor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTotalHint"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+  </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
