@@ -14,7 +14,7 @@
   <string name="text_monthly_repayment">Monthly Repayment</string>
   <string name="text_total_cost">Total Cost</string>
 
-  <string name="text_fmt_account_detail">Amount ฿%1$s, %2$s year</string>
+  <string name="text_fmt_account_detail">Amount ฿%1$s, %2$d year</string>
   <string name="text_fmt_tier">Tier %1$d</string>
   <string name="text_fmt_interest_rate">Interest rate of %1$.2f%%</string>
   <string name="text_fmt_year">for %1$d years</string>

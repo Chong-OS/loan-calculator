@@ -16,7 +16,7 @@ private val amountFormatter by lazy {
     }
 }
 
-fun Number.toStringFormat() = amountFormatter.format(this)
+fun Number.toStringFormat() = amountFormatter.format(this) ?: ""
 
 internal fun <T> nameExtra(clazz: Class<T>, name: String): Lazy<String> =
         lazy { "${clazz.simpleName}_EXTRA_${name.toUpperCase()}" }
@@ -28,19 +28,39 @@ internal fun <T> nameArg(clazz: Class<T>, name: String): Lazy<String> =
         lazy { "${clazz.simpleName}_ARG_${name.toUpperCase()}" }
 
 fun Account.calculateInterest(rates: List<Rate>): Double {
-    var tier = 1
-    var rate = rates[0]
-    var triggerYear = rate.months.div(12)
-    var interest = 0.0
+    var tier = 0
+    var monthRateChanged = rates[0].months
+    var totalInterest = 0.0
     var lastAmount = amount
-    for(year in 0..years) {
-        if(year > triggerYear) {
-            rate = rates[tier]
-            triggerYear += rate.months.div(12)
+
+    val payment = let {
+        var sumMonth = 0
+        var weight = 0.0
+        for (r in rates) {
+            weight += r.rate * r.months
+            sumMonth += r.months
         }
-        interest += lastAmount * rate.rate / 100
-        lastAmount -= interest
+        pmt(weight / sumMonth / 12, sumMonth, amount)
     }
 
-   return interest
+    for (month in 0..years * 12) {
+        if (lastAmount <= 0) {
+            break
+        }
+
+        if (month > monthRateChanged) {
+            tier++
+            monthRateChanged += rates[tier].months
+        }
+        val interest = lastAmount * rates[tier].rate / 12 / 100
+        lastAmount -= (payment - interest)
+        totalInterest += interest
+    }
+
+    return totalInterest
 }
+
+// 11,199
+// 2,011,490
+fun pmt(rate: Double, timePeriod: Int, presentValue: Double) =
+        (presentValue * rate / 100) / (1 - Math.pow(1 + (rate / 100), -timePeriod.toDouble()))

@@ -28,8 +28,10 @@ public class Instalment {
   @ColumnInfo(name = "_order")
   public int order;
   public double rate;
-  public double lastAmount;
   public double payment;
+  public double interest;
+  public double principal;
+  public double amount;
   public int dayCount;
 
 }

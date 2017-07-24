@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.chongos.loancalculator.R
 import com.chongos.loancalculator.data.entity.Account
+import com.chongos.loancalculator.utils.toStringFormat
 import com.chongos.loancalculator.utils.view.inflate
 import java.text.DecimalFormat
 import java.text.NumberFormat
@@ -18,11 +19,6 @@ import java.util.*
  */
 class AccountListAdapter : RecyclerView.Adapter<AccountListAdapter.ViewHolder>() {
 
-    val formatter by lazy {
-        (NumberFormat.getInstance(Locale.US) as DecimalFormat).apply {
-            applyPattern("#,###,###,###")
-        }
-    }
     var list: MutableList<Account>? = null
         set(value) {
             field = value
@@ -39,7 +35,7 @@ class AccountListAdapter : RecyclerView.Adapter<AccountListAdapter.ViewHolder>()
         val context = holder?.itemView?.context
 
         holder?.textName?.text = account?.name
-        holder?.textDetail?.text = context?.getString(R.string.text_fmt_account_detail, formatter.format(account?.amount), account?.years)
+        holder?.textDetail?.text = context?.getString(R.string.text_fmt_account_detail, account?.amount?.toStringFormat(), account?.years)
         holder?.textPayment?.text = "${context?.getString(R.string.text_loan_interest)} ฿${String.format("%.2f", account?.interest)}"
         holder?.itemView?.setOnClickListener { if(account != null) onItemSelectListener?.onSelect(account) }
     }
